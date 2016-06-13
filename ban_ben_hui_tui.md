@@ -125,32 +125,28 @@ Git的版本回退速度非常快，因为Git在内部有个指向当前版本�
 
 改为指向```add distributed```：
 
-git-head-move
+![](image/git-head-move.jpg)
 
 然后顺便把工作区的文件更新了。所以你让```HEAD```指向哪个版本号，你就把当前版本定位在哪。
 
 
-0:16
+ 现在，你回退到了某个版本，关掉了电脑，第二天早上就后悔了，想恢复到新版本怎么办？找不到新版本的```commit id```怎么办？
 
- 现在，你回退到了某个版本，关掉了电脑，第二天早上就后悔了，想恢复到新版本怎么办？找不到新版本的commit id怎么办？
-
-在Git中，总是有后悔药可以吃的。当你用$ git reset --hard HEAD^回退到add distributed版本时，再想恢复到append GPL，就必须找到append GPL的commit id。Git提供了一个命令git reflog用来记录你的每一次命令：
-
+在Git中，总是有后悔药可以吃的。当你用```$ git reset --hard HEAD^```回退到```add distributed```版本时，再想恢复到```append GPL```，就必须找到```append GPL```的```commit id```。Git提供了一个命令```git reflog```用来记录你的每一次命令：
+```
 $ git reflog
 ea34578 HEAD@{0}: reset: moving to HEAD^
 3628164 HEAD@{1}: commit: append GPL
 ea34578 HEAD@{2}: commit: add distributed
 cb926e7 HEAD@{3}: commit (initial): wrote a readme file
-终于舒了口气，第二行显示append GPL的commit id是3628164，现在，你又可以乘坐时光机回到未来了。
-
-
-0:47
+```
+终于舒了口气，第二行显示```append GPL```的```commit id```是```3628164```，现在，你又可以乘坐时光机回到未来了。
 
 小结
 
 现在总结一下：
 
-HEAD指向的版本就是当前版本，因此，Git允许我们在版本的历史之间穿梭，使用命令git reset --hard commit_id。
+```HEAD```指向的版本就是当前版本，因此，Git允许我们在版本的历史之间穿梭，使用命令```git reset --hard commit_id```。
 
 穿梭前，用git log可以查看提交历史，以便确定要回退到哪个版本。
 
