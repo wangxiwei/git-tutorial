@@ -6,6 +6,6 @@
        * [集中式vs分布式](ji_zhong_shi_vs_fen_bu_shi.md)
    * [安装Git](an_zhuang_git.md)
    * [创建版本库](chuang_jian_ban_ben_ku.md)
-   * 时光机穿梭
+   * [时光机穿梭](shi_guang_ji_chuan_suo.md)
 * [First Chapter](chapter1.md)
 
