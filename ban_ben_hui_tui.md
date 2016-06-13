@@ -102,30 +102,32 @@ Date:   Mon Aug 19 17:51:55 2013 +0800
 
     wrote a readme file
  ```
-最新的那个版本append GPL已经看不到了！好比你从21世纪坐时光穿梭机来到了19世纪，想再回去已经回不去了，肿么办？
+最新的那个版本```append GPL```已经看不到了！好比你从21世纪坐时光穿梭机来到了19世纪，想再回去已经回不去了，肿么办？
 
-办法其实还是有的，只要上面的命令行窗口还没有被关掉，你就可以顺着往上找啊找啊，找到那个append GPL的commit id是3628164...，于是就可以指定回到未来的某个版本：
-
+办法其实还是有的，只要上面的命令行窗口还没有被关掉，你就可以顺着往上找啊找啊，找到那个```append GPL```的```commit id```是```3628164...```，于是就可以指定回到未来的某个版本：
+```
 $ git reset --hard 3628164
 HEAD is now at 3628164 append GPL
+```
 版本号没必要写全，前几位就可以了，Git会自动去找。当然也不能只写前一两位，因为Git可能会找到多个版本号，就无法确定是哪一个了。
 
 再小心翼翼地看看readme.txt的内容：
-
+```
 $ cat readme.txt
 Git is a distributed version control system.
 Git is free software distributed under the GPL.
+```
 果然，我胡汉三又回来了。
 
-Git的版本回退速度非常快，因为Git在内部有个指向当前版本的HEAD指针，当你回退版本的时候，Git仅仅是把HEAD从指向append GPL：
+Git的版本回退速度非常快，因为Git在内部有个指向当前版本的```HEAD```指针，当你回退版本的时候，Git仅仅是把HEAD从指向```append GPL```：
 
-git-head
+![](image/git-head.jpg)
 
-改为指向add distributed：
+改为指向```add distributed```：
 
 git-head-move
 
-然后顺便把工作区的文件更新了。所以你让HEAD指向哪个版本号，你就把当前版本定位在哪。
+然后顺便把工作区的文件更新了。所以你让```HEAD```指向哪个版本号，你就把当前版本定位在哪。
 
 
 0:16
